@@ -1,25 +1,24 @@
 class Equation
-  attr_reader :input
+  attr_reader :input, :code
 
   def initialize(input)
     @input = input
   end
 
-  def parse
-    idExpressions(@input)
-  end
-
   def generate_code
-    code = ""
+    @code = ""
 
-    expressions.each do |expression|
-      code += expression.generate
-	end
+   #  expressions.each do |expression|
+   #    @code += expression.generate
+	  # end
   end
 
   def output
-	header = "def solve"
-	generated_code = expressions.
-	footer = "end\n solve()"
+  	header = "def solve"
+  	generated_code = generate_code
+  	footer = "end\n solve()"
+  
+    header + generated_code + footer
   end	  
+
 end

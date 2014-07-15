@@ -1,5 +1,11 @@
-require "./lib/operators"
+require "./lib/operator"
+require "./lib/operators/addition"
+require "./lib/operators/subtraction"
+
 require "./lib/equation"
+require "./lib/expression"
+require "./lib/operand"
+
 
 input_equation = ARGV[0]
 puts "Solving #{input_equation}"
