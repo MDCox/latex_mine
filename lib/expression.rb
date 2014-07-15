@@ -20,7 +20,7 @@ class Expression
     if operator != ""
 	    split_expression = @input.split(operator)
       split_expression.each do |operand| 
-        @operands.push(Operand.new(operand))
+        @operands.push(Expression.new(operand))
 	    end
     else
       @input.to_f
