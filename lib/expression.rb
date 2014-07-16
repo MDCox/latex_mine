@@ -1,5 +1,5 @@
 class Expression
-  attr_reader :input, :operator, :operands, :result
+  attr_reader :input, :operator, :operands, :code
 
   # An expression contains 2 operands and 1 operator.
   # Both operands are acted upon by the 1 operator.
@@ -10,25 +10,32 @@ class Expression
 	  @operator = nil
 	  @operands = []
 
-	  self.parse
-    self.result
+    self.eval
+    return @code
+  end
+
+  def eval
+    self.parse
+    self.calc_result
   end
 
   def parse
 	  @operator = @input.match(/\+/).to_s
 
-    if operator != ""
-	    split_expression = @input.split(operator)
+    if @operator != ""
+	    split_expression = @input.split(@operator)
       split_expression.each do |operand| 
-        @operands.push(Expression.new(operand))
+        @operands.push(Expression.new(operand).result) 
 	    end
-    else
-      @input.to_f
     end
   end
 
-  def result
-    operator(@operands[0], @operands[1])
+  def calc_result
+    if @operator == "" && @operands == []
+      @result = @input.to_f
+    else
+      @result = Operator.lookup[@operator].new(@operands[0], @operands[1]).result
+    end
   end
 
 end

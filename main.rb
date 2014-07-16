@@ -4,7 +4,6 @@ require "./lib/operators/subtraction"
 
 require "./lib/equation"
 require "./lib/expression"
-require "./lib/operand"
 
 
 input_equation = ARGV[0]

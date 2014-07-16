@@ -8,9 +8,9 @@ class Equation
   def generate_code
     @code = ""
 
-   #  expressions.each do |expression|
-   #    @code += expression.generate
-	  # end
+    expressions.each do |expression|
+      @code += expression.generate
+	  end
   end
 
   def output
