@@ -14,7 +14,7 @@ class Expression
   end
 
   def parse
-	  @operator_symbol = @input.match(/\+/).to_s
+	  @operator_symbol = @input.match(/[\+\-]/).to_s
 
     if @operator_symbol != ""
 	    @operands = @input.split(@operator_symbol)
