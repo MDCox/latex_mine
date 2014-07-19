@@ -6,19 +6,17 @@ class Equation
   end
 
   def generate_code
-    @code = ""
-
-    expressions.each do |expression|
-      @code += expression.generate
-	  end
+  	expression = Expression.new(@input)
+	  @code = expression.generate_code
+	  @code
   end
 
   def output
   	header = "def solve"
-  	generated_code = generate_code
-  	footer = "end\n solve()"
+  	generated_code = @code
+  	footer = "end\n puts solve()"
   
-    header + generated_code + footer
+    [header, generated_code, footer].join("\n")
   end	  
 
 end

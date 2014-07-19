@@ -1,15 +1,12 @@
 class Addition < Operator
 
-    def initialize(operand1, operand2)
-      @symbols = "+"
-      return self.do(operand1, operand2)
-    end
+  def initialize(operands)
+    @symbols = "+"
+    @operands = operands
+  end
 
-    def generate
-    end
-
-    def do(operand1, operand2)
-      @result = operand1 + operand2
-      @result
-    end
+  def generate_code
+    code = "(#{@operands[0]} + #{@operands[1]})"
+    code
+  end
 end
