@@ -5,7 +5,6 @@ require "./lib/operators/subtraction"
 require "./lib/equation"
 require "./lib/expression"
 
-
 input_equation = ARGV[0]
 puts "Solving #{input_equation}"
 
