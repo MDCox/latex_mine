@@ -1,6 +1,8 @@
 require "./lib/operator"
 require "./lib/operators/addition"
 require "./lib/operators/subtraction"
+require "./lib/operators/multiplication"
+require "./lib/operators/division"
 
 require "./lib/equation"
 require "./lib/expression"
